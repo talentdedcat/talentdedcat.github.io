@@ -227,7 +227,7 @@ git commit -m "feat: add semantic academic profile"
 - Modify: `tests/site.test.js`
 - Create: `script.js`
 
-- [ ] **Step 1: Write failing helper tests**
+- [x] **Step 1: Write failing helper tests**
 
 Add tests that require `../script.js` and assert `filterPublications(publications, 'all')` returns all five, `ai-eda` returns four, `hardware` returns two, `low-power` returns two, an unknown filter returns all five, and `sortPublications` returns descending years without mutating input.
 
@@ -250,25 +250,25 @@ test('sorts publications without mutating the source array', () => {
 });
 ```
 
-- [ ] **Step 2: Run helper tests and verify RED**
+- [x] **Step 2: Run helper tests and verify RED**
 
 Run: `node --test tests/site.test.js`
 
 Expected: FAIL with `MODULE_NOT_FOUND` for `script.js`.
 
-- [ ] **Step 3: Implement pure helpers and DOM enhancement**
+- [x] **Step 3: Implement pure helpers and DOM enhancement**
 
 Create a UMD-style closure that exports `filterPublications` and `sortPublications` under CommonJS and `globalThis.SiteApp` in browsers. On `DOMContentLoaded`, validate `PUBLICATIONS`, map record topics to existing publication elements, add filter-button pressed state and live result count, track active navigation using `IntersectionObserver`, and apply pointer position as CSS custom properties only when fine pointer and reduced motion is not requested.
 
 Filtering must set the native `hidden` property on unmatched articles. Unknown filters must fail open to all records. If data is missing or malformed, return without altering the static page.
 
-- [ ] **Step 4: Run all JavaScript tests and verify GREEN**
+- [x] **Step 4: Run all JavaScript tests and verify GREEN**
 
 Run: `node --test tests/*.test.js`
 
 Expected: 9 tests pass, 0 fail.
 
-- [ ] **Step 5: Commit the interaction slice**
+- [x] **Step 5: Commit the interaction slice**
 
 ```bash
 git add script.js tests/site.test.js
