@@ -25,6 +25,7 @@ test('renders the verified identity and core sections', () => {
 
 test('uses a tightly cropped ZJU emblem and the revised research statement', () => {
   const source = readProjectFile('index.html');
+  const normalizedSource = source.replace(/\s+/g, ' ');
   const zjuMark = fs.readFileSync(
     path.join(root, 'assets/institutions/zhejiang-university.png'),
   );
@@ -34,13 +35,12 @@ test('uses a tightly cropped ZJU emblem and the revised research statement', () 
   assert.equal(width, height, 'ZJU emblem asset should be square');
   assert.ok(width >= 320, 'ZJU emblem should retain enough source resolution');
   assert.ok(
-    source.includes('AI to accelerate conventional EDA workflows'),
+    normalizedSource.includes(
+      'My research focuses on <strong>AI for EDA</strong> and <strong>low-power optimization</strong>, with an emphasis on intelligent design methodologies and energy-efficient techniques for chip and hardware-system design.',
+    ),
     'missing revised AI-for-EDA research statement',
   );
-  assert.ok(
-    source.includes('low-power optimization techniques'),
-    'missing revised low-power research statement',
-  );
+  assert.doesNotMatch(source, /accelerate conventional EDA workflows/i);
   assert.doesNotMatch(source, /with the goal of making chip design/i);
 });
 
