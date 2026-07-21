@@ -80,3 +80,25 @@ test('sorts publications without mutating the source array', () => {
     [2024, 2026],
   );
 });
+
+test('implements the approved responsive and accessible CSS system', () => {
+  const css = readProjectFile('styles.css');
+  for (const rule of [
+    'oklch(',
+    ':focus-visible',
+    'prefers-reduced-motion',
+    'aspect-ratio',
+    '@media print',
+    '.publication',
+    'max-width: 1024px',
+    'max-width: 768px',
+    'max-width: 375px',
+  ]) {
+    assert.ok(css.includes(rule), `missing ${rule}`);
+  }
+  assert.doesNotMatch(
+    css,
+    /background-clip\s*:\s*text|backdrop-filter|letter-spacing\s*:\s*-/i,
+  );
+  assert.doesNotMatch(css, /border-(left|right)\s*:\s*[2-9]/i);
+});

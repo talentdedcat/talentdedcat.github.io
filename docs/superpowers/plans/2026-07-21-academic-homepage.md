@@ -282,7 +282,7 @@ git commit -m "feat: add publication filtering"
 - Create: `styles.css`
 - Modify: `index.html`
 
-- [ ] **Step 1: Write failing CSS guardrail tests**
+- [x] **Step 1: Write failing CSS guardrail tests**
 
 Read `styles.css` and assert it contains the approved OKLCH design tokens, focus-visible styling, reduced-motion rules, 375/768/1024 responsive coverage, publication timeline selectors, stable chip-figure aspect ratio, print styling, and no gradient text, backdrop filter, negative letter spacing, or colored side border wider than one pixel.
 
@@ -297,29 +297,29 @@ test('implements the approved responsive and accessible CSS system', () => {
 });
 ```
 
-- [ ] **Step 2: Run CSS tests and verify RED**
+- [x] **Step 2: Run CSS tests and verify RED**
 
 Run: `node --test tests/site.test.js`
 
 Expected: FAIL with `ENOENT` for `styles.css`.
 
-- [ ] **Step 3: Implement the visual system**
+- [x] **Step 3: Implement the visual system**
 
 Create `styles.css` with the tokens in `DESIGN.md`, discrete type sizes, a floating navigation with visible edge spacing, a 12-column asymmetric hero, an unframed 4:3 chip visualization, three unframed research themes, a full-width chronological publication rail, integrated award band, affiliation timeline, keyboard focus, hover feedback without transforms, reduced-motion overrides, and print rules.
 
 Use maximum radius 8 pixels, no nested cards, no viewport-scaled font sizes, no negative letter spacing, and no horizontal overflow. Use system fallbacks behind Sora, Source Sans 3, and Recursive Mono.
 
-- [ ] **Step 4: Connect the stylesheet and font preconnects**
+- [x] **Step 4: Connect the stylesheet and font preconnects**
 
 Add the stylesheet link and Google Fonts stylesheet to `index.html`, with `preconnect` for `fonts.googleapis.com` and `fonts.gstatic.com`. Preserve usable system fallbacks if fonts fail.
 
-- [ ] **Step 5: Run all tests and verify GREEN**
+- [x] **Step 5: Run all tests and verify GREEN**
 
 Run: `node --test tests/*.test.js`
 
 Expected: all tests pass, 0 fail.
 
-- [ ] **Step 6: Commit the visual slice**
+- [x] **Step 6: Commit the visual slice**
 
 ```bash
 git add styles.css index.html tests/site.test.js
