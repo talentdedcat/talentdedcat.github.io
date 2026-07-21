@@ -23,6 +23,27 @@ test('renders the verified identity and core sections', () => {
   }
 });
 
+test('uses a tightly cropped ZJU emblem and the revised research statement', () => {
+  const source = readProjectFile('index.html');
+  const zjuMark = fs.readFileSync(
+    path.join(root, 'assets/institutions/zhejiang-university.png'),
+  );
+  const width = zjuMark.readUInt32BE(16);
+  const height = zjuMark.readUInt32BE(20);
+
+  assert.equal(width, height, 'ZJU emblem asset should be square');
+  assert.ok(width >= 320, 'ZJU emblem should retain enough source resolution');
+  assert.ok(
+    source.includes('AI to accelerate conventional EDA workflows'),
+    'missing revised AI-for-EDA research statement',
+  );
+  assert.ok(
+    source.includes('low-power optimization techniques'),
+    'missing revised low-power research statement',
+  );
+  assert.doesNotMatch(source, /with the goal of making chip design/i);
+});
+
 test('uses the approved reference layout and real visual assets', () => {
   const source = readProjectFile('index.html');
   for (const value of [
