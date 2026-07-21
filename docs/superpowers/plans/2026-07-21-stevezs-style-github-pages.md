@@ -181,17 +181,17 @@ the affected screenshots and measurements.
 **Files:**
 - Modify: Git remote configuration
 
-- [ ] **Step 1: Create the public repository**
+- [x] **Step 1: Create the public repository**
 
 Create `talentdedcat/talentdedcat.github.io` through the authenticated GitHub
 session without initializing it with a README, license, or `.gitignore`.
 
-- [ ] **Step 2: Merge the verified feature branch to main**
+- [x] **Step 2: Merge the verified feature branch to main**
 
 Fast-forward or merge only after the full test suite passes. Re-run tests on
 `main` before publishing.
 
-- [ ] **Step 3: Add the remote and push**
+- [x] **Step 3: Add the remote and push**
 
 ```bash
 git remote add origin git@github.com:talentdedcat/talentdedcat.github.io.git
@@ -200,13 +200,13 @@ git push -u origin main
 
 Expected: push succeeds and the remote branch is `main`.
 
-- [ ] **Step 4: Verify the deployed site**
+- [x] **Step 4: Verify the deployed site**
 
 Open `https://talentdedcat.github.io/`, wait for Pages deployment, and confirm
 the title, five publications, seven visual assets, zero console errors, and zero
 horizontal overflow at desktop and mobile widths.
 
-- [ ] **Step 5: Commit any deployment documentation update**
+- [x] **Step 5: Commit any deployment documentation update**
 
 If the live URL or deployment behavior differs from this plan, update README
 with the verified values, commit, and push the final documentation change.
