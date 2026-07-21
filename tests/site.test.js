@@ -36,12 +36,19 @@ test('uses a tightly cropped ZJU emblem and the revised research statement', () 
   assert.ok(width >= 320, 'ZJU emblem should retain enough source resolution');
   assert.ok(
     normalizedSource.includes(
-      'My research focuses on <strong>AI for EDA</strong> and <strong>low-power optimization</strong>, with an emphasis on intelligent design methodologies and energy-efficient techniques for chip and hardware-system design.',
+      'My research focuses on <strong>AI for EDA</strong> and <strong>low-power optimization</strong>, with an emphasis on design methodologies and energy-efficient techniques for chip and hardware design.',
     ),
     'missing revised AI-for-EDA research statement',
   );
   assert.doesNotMatch(source, /accelerate conventional EDA workflows/i);
   assert.doesNotMatch(source, /with the goal of making chip design/i);
+});
+
+test('keeps the AI-for-EDA research summary concise', () => {
+  const source = readProjectFile('index.html');
+
+  assert.ok(source.includes('Machine learning for cell characterization.'));
+  assert.doesNotMatch(source, /circuit understanding|design-space exploration/i);
 });
 
 test('uses the approved reference layout and real visual assets', () => {
