@@ -27,7 +27,7 @@
 - Create: `tests/publications.test.js`
 - Create: `data/publications.js`
 
-- [ ] **Step 1: Write the failing bibliography tests**
+- [x] **Step 1: Write the failing bibliography tests**
 
 Create `tests/publications.test.js` with Node's built-in runner. The test must require `../data/publications.js`, assert exactly five records, require years `[2026, 2026, 2025, 2024, 2024]`, check all five DOI URLs, verify the ICCAD award string, verify every record contains `Shizhang Wang`, and reject the quadrotor title.
 
@@ -65,13 +65,13 @@ test('excludes the unrelated 2020 quadrotor record', () => {
 });
 ```
 
-- [ ] **Step 2: Run the test and verify RED**
+- [x] **Step 2: Run the test and verify RED**
 
 Run: `node --test tests/publications.test.js`
 
 Expected: FAIL with `MODULE_NOT_FOUND` for `data/publications.js`.
 
-- [ ] **Step 3: Implement the publication data**
+- [x] **Step 3: Implement the publication data**
 
 Create a CommonJS/browser-compatible array with these exact record IDs and metadata: `zlibboost`, `riscv-audio`, `aspdac-library`, `iccad-llm`, and `mlcad-subgraph`. Each record contains `id`, `year`, `title`, `authors`, `venue`, `venueShort`, `doi`, `links`, `topics`, and optional `award`. Assign it to `globalThis.PUBLICATIONS`, freeze records and the array, and export it when `module.exports` exists.
 
@@ -135,13 +135,13 @@ Create a CommonJS/browser-compatible array with these exact record IDs and metad
 }(typeof globalThis !== 'undefined' ? globalThis : window));
 ```
 
-- [ ] **Step 4: Run bibliography tests and verify GREEN**
+- [x] **Step 4: Run bibliography tests and verify GREEN**
 
 Run: `node --test tests/publications.test.js`
 
 Expected: 4 tests pass, 0 fail.
 
-- [ ] **Step 5: Commit the bibliography slice**
+- [x] **Step 5: Commit the bibliography slice**
 
 ```bash
 git add data/publications.js tests/publications.test.js
