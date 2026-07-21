@@ -2,10 +2,11 @@
 
 ## Direction
 
-The homepage follows the proven information architecture of
-`luost26/academic-homepage`: a compact identity sidebar and a denser academic
-content column. The implementation is original and intentionally quieter,
-using verified research records as the primary visual material.
+The homepage follows the information rhythm of
+[`stevezs315.github.io`](https://stevezs315.github.io/): a charcoal navigation
+bar, compact identity sidebar, and a dense academic content column. The
+implementation is original and uses verified research records and primary-paper
+figures as its scientific visual material.
 
 ## Theme
 
@@ -32,11 +33,12 @@ who scan academic homepages for affiliation, topics, awards, and papers.
 
 ## Layout
 
-- Desktop: sticky 16rem profile sidebar plus a flexible content column.
+- Desktop: sticky 255px profile sidebar plus an approximately 825px content column.
 - Main content: About, Education & Honors, Updates, Research, Publications.
 - Mobile: one column; the profile card becomes a compact horizontal block.
-- The portrait and publication image positions are deliberately blank until
-  real, authorized images are supplied.
+- The portrait remains deliberately blank until a real portrait is supplied.
+- Institution marks come from official university sources; publication visuals
+  show core architecture or workflow figures from the primary papers.
 
 ## Components
 
@@ -45,8 +47,8 @@ who scan academic homepages for affiliation, topics, awards, and papers.
 - Flat content cards with 8px or smaller corner radii.
 - Year-grouped update timeline.
 - Research areas distinguished by blue, teal, and gold rules.
-- Publication rows with blank 4:3 image slots, metadata, authors, venue, award,
-  and stable DOI/PDF links.
+- Publication rows with optimized 8:5 architecture figures, metadata, authors,
+  venue, award, and stable DOI/PDF links.
 - Compact topic filters that progressively enhance the static paper list.
 
 ## Motion And Accessibility

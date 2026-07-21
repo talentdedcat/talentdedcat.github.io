@@ -23,7 +23,7 @@ test('renders the verified identity and core sections', () => {
   }
 });
 
-test('uses the approved academic-homepage layout with blank image slots', () => {
+test('uses the approved reference layout and real visual assets', () => {
   const source = readProjectFile('index.html');
   for (const value of [
     'class="page-grid"',
@@ -31,11 +31,36 @@ test('uses the approved academic-homepage layout with blank image slots', () => 
     'class="portrait-placeholder"',
     'class="content-card about-card"',
     'id="updates"',
-    'class="publication-visual"',
+    'class="publication-figure"',
+    'assets/institutions/zhejiang-university.png',
+    'assets/institutions/hubei-university-of-technology.png',
+    'assets/publications/zlibboost.webp',
+    'assets/publications/riscv-audio.webp',
+    'assets/publications/aspdac-library.webp',
+    'assets/publications/iccad-llm.webp',
+    'assets/publications/mlcad-subgraph.webp',
   ]) {
     assert.ok(source.includes(value), `missing reference-layout element: ${value}`);
   }
-  assert.doesNotMatch(source, /<img\b|chip-figure|chip-canvas/i);
+  assert.equal((source.match(/loading="lazy"/g) || []).length, 5);
+  assert.equal((source.match(/decoding="async"/g) || []).length, 5);
+  assert.match(source, /alt="[^"]*(framework|architecture|design flow)[^"]*"/i);
+  assert.doesNotMatch(source, /chip-figure|chip-canvas/i);
+});
+
+test('documents the official marks and primary-paper figure sources', () => {
+  const sources = readProjectFile('assets/SOURCES.md');
+  for (const value of [
+    'www.zju.edu.cn',
+    'dag.hbut.edu.cn',
+    '10.1145/3747182',
+    '10.1587/elex.22.20250120',
+    '10.1145/3658617.3703638',
+    '10.1145/3676536.3676753',
+    '10.1145/3670474.3685958',
+  ]) {
+    assert.ok(sources.includes(value), `missing asset provenance: ${value}`);
+  }
 });
 
 test('ships all five publications without JavaScript', () => {
@@ -108,6 +133,8 @@ test('implements the approved responsive and accessible CSS system', () => {
     'max-width: 1024px',
     'max-width: 768px',
     'max-width: 375px',
+    '--header: oklch(',
+    'height: 3.5rem',
   ]) {
     assert.ok(css.includes(rule), `missing ${rule}`);
   }

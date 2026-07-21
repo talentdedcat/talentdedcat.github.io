@@ -1,18 +1,19 @@
 :root {
-  --page: oklch(0.965 0.004 240);
-  --card: oklch(0.995 0.002 240);
-  --ink: oklch(0.22 0.018 255);
-  --muted: oklch(0.5 0.018 255);
-  --line: oklch(0.89 0.008 245);
-  --blue: oklch(0.57 0.16 250);
-  --blue-dark: oklch(0.43 0.15 250);
+  --page: oklch(0.955 0.004 250);
+  --card: oklch(0.995 0.002 250);
+  --header: oklch(0.28 0.012 255);
+  --ink: oklch(0.25 0.016 255);
+  --muted: oklch(0.49 0.016 255);
+  --line: oklch(0.88 0.007 250);
+  --blue: oklch(0.58 0.15 250);
+  --blue-dark: oklch(0.46 0.14 250);
   --teal: oklch(0.63 0.11 180);
   --teal-soft: oklch(0.93 0.035 180);
   --gold: oklch(0.68 0.13 75);
   --gold-soft: oklch(0.94 0.04 75);
-  --shadow: 0 2px 5px color-mix(in oklch, var(--ink) 7%, transparent);
-  --header-height: 4rem;
-  --content-width: 72rem;
+  --shadow: 0 2px 6px color-mix(in oklch, var(--ink) 8%, transparent);
+  --header-height: 3.5rem;
+  --content-width: 69.375rem;
   --gutter: 1.25rem;
   --font-body: "Inter", "Segoe UI", sans-serif;
   --font-heading: "Source Serif 4", Georgia, serif;
@@ -89,10 +90,11 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 20;
+  height: 3.5rem;
   min-height: var(--header-height);
-  border-bottom: 1px solid var(--line);
-  background: color-mix(in oklch, var(--card) 94%, transparent);
-  box-shadow: 0 1px 0 color-mix(in oklch, var(--ink) 2%, transparent);
+  border-bottom: 1px solid color-mix(in oklch, white 12%, var(--header));
+  background: var(--header);
+  box-shadow: 0 1px 4px color-mix(in oklch, black 22%, transparent);
 }
 
 .site-nav {
@@ -106,10 +108,10 @@ a:hover {
 }
 
 .site-name {
-  color: var(--ink);
-  font-family: var(--font-heading);
-  font-size: 1.28rem;
-  font-weight: 700;
+  color: white;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -121,7 +123,7 @@ a:hover {
 
 .nav-links a {
   position: relative;
-  color: var(--muted);
+  color: oklch(0.87 0.008 250);
   font-size: 0.83rem;
   font-weight: 500;
   text-decoration: none;
@@ -142,7 +144,7 @@ a:hover {
 
 .nav-links a:hover,
 .nav-links a[aria-current="location"] {
-  color: var(--ink);
+  color: white;
 }
 
 .nav-links a:hover::after,
@@ -154,15 +156,15 @@ a:hover {
 .page-grid {
   display: grid;
   width: min(calc(100% - (var(--gutter) * 2)), var(--content-width));
-  grid-template-columns: 16rem minmax(0, 1fr);
-  gap: 1.6rem;
+  grid-template-columns: 15.9375rem minmax(0, 1fr);
+  gap: 1.875rem;
   align-items: start;
-  margin: 1.6rem auto 0;
+  margin: 1.5rem auto 0;
 }
 
 .profile-sidebar {
   position: sticky;
-  top: calc(var(--header-height) + 1.6rem);
+  top: calc(var(--header-height) + 1.5rem);
 }
 
 .profile-card,
@@ -174,7 +176,7 @@ a:hover {
 }
 
 .profile-card {
-  padding: 1.35rem;
+  padding: 1.3rem;
 }
 
 .portrait-placeholder {
@@ -182,7 +184,7 @@ a:hover {
   aspect-ratio: 1 / 1;
   border: 1px solid var(--line);
   border-radius: 4px;
-  background: oklch(0.955 0.004 245);
+  background: oklch(0.96 0.003 250);
 }
 
 .profile-copy {
@@ -206,12 +208,12 @@ h3 {
 
 h1,
 h2 {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
 }
 
 h1 {
   margin-bottom: 0.35rem;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 1.2;
 }
 
@@ -295,7 +297,7 @@ h1 span {
 }
 
 .content-card {
-  padding: 1.8rem 2rem;
+  padding: 1.65rem 1.9rem;
 }
 
 .section-kicker {
@@ -308,7 +310,7 @@ h1 span {
 
 .about-card h2 {
   margin-bottom: 0.9rem;
-  font-size: 1.9rem;
+  font-size: 1.55rem;
   line-height: 1.2;
 }
 
@@ -339,26 +341,19 @@ h1 span {
 
 .institution {
   display: grid;
-  grid-template-columns: 2.45rem minmax(0, 1fr);
+  grid-template-columns: 3rem minmax(0, 1fr);
   gap: 0.75rem;
   align-items: start;
 }
 
 .institution-mark {
-  display: grid;
-  width: 2.45rem;
-  height: 2.45rem;
-  place-items: center;
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--line);
   border-radius: 50%;
-  background: var(--blue-dark);
-  color: white;
-  font-size: 0.58rem;
-  font-weight: 700;
-}
-
-.institution-mark-secondary {
-  background: var(--teal);
-  color: var(--ink);
+  background: white;
+  object-fit: contain;
 }
 
 .institution h3,
@@ -500,7 +495,7 @@ h1 span {
 }
 
 .publications-heading .compact-heading {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: 1.45rem;
 }
 
@@ -551,9 +546,9 @@ h1 span {
 
 .publication {
   display: grid;
-  grid-template-columns: 8.5rem minmax(0, 1fr);
-  gap: 1.15rem;
-  padding: 1.2rem 0;
+  grid-template-columns: 11.25rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1.35rem 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -562,13 +557,22 @@ h1 span {
   padding-bottom: 0.2rem;
 }
 
-.publication-visual {
+.publication-figure {
+  overflow: hidden;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 8 / 5;
   align-self: start;
+  margin: 0;
   border: 1px solid var(--line);
   border-radius: 4px;
-  background: oklch(0.96 0.004 245);
+  background: white;
+}
+
+.publication-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .publication-meta {
@@ -656,7 +660,7 @@ h1 span {
 
 @media (max-width: 1024px) {
   .page-grid {
-    grid-template-columns: 14rem minmax(0, 1fr);
+    grid-template-columns: 14.25rem minmax(0, 1fr);
     gap: 1.1rem;
   }
 
@@ -758,7 +762,7 @@ h1 span {
   }
 
   .publication {
-    grid-template-columns: 6rem minmax(0, 1fr);
+    grid-template-columns: 8rem minmax(0, 1fr);
     gap: 0.85rem;
   }
 }
@@ -818,8 +822,8 @@ h1 span {
     grid-template-columns: 1fr;
   }
 
-  .publication-visual {
-    width: 7rem;
+  .publication-figure {
+    width: 100%;
   }
 
   .site-footer {
@@ -897,7 +901,7 @@ h1 span {
     padding: 1rem 0;
   }
 
-  .publication-visual {
+  .publication-figure {
     display: none;
   }
 

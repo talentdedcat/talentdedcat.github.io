@@ -16,12 +16,12 @@
 - Create: `docs/superpowers/specs/2026-07-21-stevezs-style-github-pages-design.md`
 - Create: `docs/superpowers/plans/2026-07-21-stevezs-style-github-pages.md`
 
-- [ ] **Step 1: Save the design specification**
+- [x] **Step 1: Save the design specification**
 
 Record the exact reference, deployment URL, verified content boundary, official
 logo requirement, and primary-paper figure requirement.
 
-- [ ] **Step 2: Self-review the documents**
+- [x] **Step 2: Self-review the documents**
 
 Run:
 
@@ -31,7 +31,7 @@ rg -n "TBD|TODO|implement later|fill in details" docs/superpowers/specs/2026-07-
 
 Expected: no unresolved design or implementation placeholder.
 
-- [ ] **Step 3: Commit the design contract**
+- [x] **Step 3: Commit the design contract**
 
 ```bash
 git add docs/superpowers/specs/2026-07-21-stevezs-style-github-pages-design.md docs/superpowers/plans/2026-07-21-stevezs-style-github-pages.md
@@ -50,29 +50,29 @@ git commit -m "docs: specify deployed academic homepage redesign"
 - Create: `assets/publications/mlcad-subgraph.webp`
 - Create: `assets/SOURCES.md`
 
-- [ ] **Step 1: Download official marks and primary papers**
+- [x] **Step 1: Download official marks and primary papers**
 
 Use Zhejiang University and Hubei University of Technology official identity
 pages for marks. Use the ACM, J-STAGE, author-hosted ICCAD PDF, and author or
 conference paper sources for publication figures.
 
-- [ ] **Step 2: Render and inspect paper pages**
+- [x] **Step 2: Render and inspect paper pages**
 
 Run `pdfinfo` and `pdftoppm -png -r 160` for each PDF. Inspect the rendered
 pages and select the figure that best communicates the paper's architecture or
 workflow rather than automatically selecting page one.
 
-- [ ] **Step 3: Crop and optimize figures**
+- [x] **Step 3: Crop and optimize figures**
 
 Export each selected region as WebP with a stable 640px-wide canvas. Preserve
 diagram labels and use white padding rather than cropping labels or legends.
 
-- [ ] **Step 4: Record provenance**
+- [x] **Step 4: Record provenance**
 
 Add source URL, paper title, selected figure number or description, and access
 date for all seven visual assets to `assets/SOURCES.md`.
 
-- [ ] **Step 5: Verify assets**
+- [x] **Step 5: Verify assets**
 
 Run:
 
@@ -89,14 +89,14 @@ multi-megabyte web asset.
 **Files:**
 - Modify: `tests/site.test.js`
 
-- [ ] **Step 1: Write failing structural and asset tests**
+- [x] **Step 1: Write failing structural and asset tests**
 
 Require the charcoal navigation structure, profile portrait slot, two official
 institution image paths, all five publication image paths, lazy loading,
 descriptive alt text, source documentation, and the five stable scholarly
 links.
 
-- [ ] **Step 2: Verify RED**
+- [x] **Step 2: Verify RED**
 
 Run:
 
@@ -116,30 +116,30 @@ referenced by the page.
 - Modify: `DESIGN.md`
 - Modify: `README.md`
 
-- [ ] **Step 1: Recompose semantic HTML**
+- [x] **Step 1: Recompose semantic HTML**
 
 Build the compact charcoal header, sticky left profile card, About panel,
 combined Education and Awards panel, year-grouped Updates panel, Research panel,
 and image-led Publications panel. Keep all five papers in static HTML.
 
-- [ ] **Step 2: Attach official and paper images**
+- [x] **Step 2: Attach official and paper images**
 
 Use fixed `width` and `height`, meaningful `alt`, `decoding="async"`, and
 `loading="lazy"` for publication images. Institution marks remain eager because
 they are near the first viewport.
 
-- [ ] **Step 3: Match the reference visual system**
+- [x] **Step 3: Match the reference visual system**
 
 Use a 56px charcoal top bar, centered desktop shell, 255/825px column rhythm,
 8px cards, light page gray, blue links, compact body type, and content-driven
 responsive breakpoints. Preserve focus, reduced-motion, and print behavior.
 
-- [ ] **Step 4: Remove stale behavior**
+- [x] **Step 4: Remove stale behavior**
 
 Keep filtering and active navigation only. Do not add modal image viewers,
 animations, client-side rendering, or build dependencies.
 
-- [ ] **Step 5: Verify GREEN**
+- [x] **Step 5: Verify GREEN**
 
 Run:
 
@@ -156,22 +156,22 @@ Expected: all tests pass and whitespace validation exits zero.
 - Modify as needed: `index.html`
 - Modify as needed: `styles.css`
 
-- [ ] **Step 1: Inspect desktop against the reference**
+- [x] **Step 1: Inspect desktop against the reference**
 
 Compare at 1280x720 and 1440x1000. Check the navigation height, column widths,
 panel geometry, image legibility, paper density, and visible first-fold content.
 
-- [ ] **Step 2: Inspect tablet and mobile**
+- [x] **Step 2: Inspect tablet and mobile**
 
 Check 768x1024 and 375x812. Require zero horizontal overflow, readable figure
 labels, stable navigation, and no clipped title or author text.
 
-- [ ] **Step 3: Exercise publication filters**
+- [x] **Step 3: Exercise publication filters**
 
 Verify Hardware shows two publications, All restores five, focus remains
 visible, and the console has no warnings or errors.
 
-- [ ] **Step 4: Apply one critique-and-fix pass**
+- [x] **Step 4: Apply one critique-and-fix pass**
 
 Patch every material mismatch discovered in the first browser pass, then repeat
 the affected screenshots and measurements.
