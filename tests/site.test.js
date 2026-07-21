@@ -23,6 +23,21 @@ test('renders the verified identity and core sections', () => {
   }
 });
 
+test('uses the approved academic-homepage layout with blank image slots', () => {
+  const source = readProjectFile('index.html');
+  for (const value of [
+    'class="page-grid"',
+    'class="profile-card"',
+    'class="portrait-placeholder"',
+    'class="content-card about-card"',
+    'id="updates"',
+    'class="publication-visual"',
+  ]) {
+    assert.ok(source.includes(value), `missing reference-layout element: ${value}`);
+  }
+  assert.doesNotMatch(source, /<img\b|chip-figure|chip-canvas/i);
+});
+
 test('ships all five publications without JavaScript', () => {
   const source = readProjectFile('index.html');
   for (const id of [
@@ -101,4 +116,24 @@ test('implements the approved responsive and accessible CSS system', () => {
     /background-clip\s*:\s*text|backdrop-filter|letter-spacing\s*:\s*-/i,
   );
   assert.doesNotMatch(css, /border-(left|right)\s*:\s*[2-9]/i);
+  assert.doesNotMatch(css, /100vmax/i);
+});
+
+test('documents preview, deployment, publication updates, and optional content', () => {
+  const readme = readProjectFile('README.md');
+  for (const value of [
+    'python3 -m http.server 4173',
+    'http://127.0.0.1:4173/',
+    'GitHub Pages',
+    'data/publications.js',
+    'index.html',
+    'GitHub profile',
+    'public email',
+    'CV',
+    'Google Scholar',
+    'portrait',
+    'Zhejiang University program',
+  ]) {
+    assert.ok(readme.includes(value), `missing README guidance: ${value}`);
+  }
 });

@@ -91,30 +91,6 @@
     for (const section of sections) observer.observe(section);
   }
 
-  function setUpChipMotion(document) {
-    if (typeof global.matchMedia !== 'function') return;
-    const precisePointer = global.matchMedia('(pointer: fine)').matches;
-    const reducedMotion = global.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    ).matches;
-    const figure = document.querySelector('.chip-figure');
-
-    if (!precisePointer || reducedMotion || !figure) return;
-
-    figure.addEventListener('pointermove', (event) => {
-      const bounds = figure.getBoundingClientRect();
-      const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
-      const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
-      figure.style.setProperty('--pointer-x', x.toFixed(3));
-      figure.style.setProperty('--pointer-y', y.toFixed(3));
-    });
-
-    figure.addEventListener('pointerleave', () => {
-      figure.style.setProperty('--pointer-x', '0');
-      figure.style.setProperty('--pointer-y', '0');
-    });
-  }
-
   function init() {
     const document = global.document;
     const records = global.PUBLICATIONS;
@@ -123,7 +99,6 @@
     document.documentElement.classList.add('js');
     setUpFilters(document, records);
     setUpActiveNavigation(document);
-    setUpChipMotion(document);
   }
 
   const api = Object.freeze({ filterPublications, sortPublications });

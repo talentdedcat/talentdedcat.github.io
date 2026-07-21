@@ -18,7 +18,7 @@ Precise, restrained, research-driven. The voice is confident but factual, using 
 
 ## Anti-references
 
-Avoid generic academic templates, card-heavy SaaS layouts, neon cyberpunk styling, decorative glass effects, fake charts, unverified citation metrics, oversized marketing copy, and claims that cannot be traced to a public source or directly confirmed by the author.
+Avoid marketing-style heroes, neon cyberpunk styling, decorative glass effects, fake charts, unverified citation metrics, oversized promotional copy, and claims that cannot be traced to a public source or directly confirmed by the author.
 
 ## Design Principles
 

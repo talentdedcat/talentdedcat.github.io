@@ -2,58 +2,62 @@
 
 ## Direction
 
-The page should feel like a carefully annotated semiconductor lab notebook translated into a contemporary web interface. It uses a rigorous grid, concise scientific labels, and a code-native chip-floorplan visual instead of stock photography or decorative illustration.
+The homepage follows the proven information architecture of
+`luost26/academic-homepage`: a compact identity sidebar and a denser academic
+content column. The implementation is original and intentionally quieter,
+using verified research records as the primary visual material.
 
 ## Theme
 
-Light theme. A researcher opens the page on a bright office monitor between reading papers, expecting immediate legibility, reliable links, and a calm surface that supports focused comparison.
+Light theme with a cool gray page, white content surfaces, graphite text, and
+small scientific accents. The interface should feel familiar to researchers
+who scan academic homepages for affiliation, topics, awards, and papers.
 
 ## Color Strategy
 
-Restrained, with tinted near-neutrals and two small functional accents.
-
-- Canvas: warm mineral white, `oklch(0.975 0.006 95)`
-- Surface: pale technical gray, `oklch(0.94 0.008 225)`
-- Ink: carbon, `oklch(0.20 0.012 240)`
-- Muted ink: `oklch(0.48 0.015 235)`
-- Signal: controlled green, `oklch(0.58 0.13 158)`
-- Conductor: muted copper, `oklch(0.62 0.10 55)`
-- Rule: `oklch(0.84 0.012 225)`
-
-Accent color should stay below roughly 12 percent of the visible surface. Green marks current research and interactive states; copper marks dates, awards, and publication metadata.
+- Page: cool technical gray, `oklch(0.965 0.004 240)`
+- Card: near white, `oklch(0.995 0.002 240)`
+- Ink: graphite, `oklch(0.22 0.018 255)`
+- Muted text: `oklch(0.50 0.018 255)`
+- Primary: scientific blue, `oklch(0.57 0.16 250)`
+- Secondary: teal for institutional and invited-paper metadata
+- Award: muted gold for the ICCAD Best Paper label
 
 ## Typography
 
-- Display and interface: Sora, a geometric sans with compact technical forms.
-- Reading text: Source Sans 3, optimized for long-form screen legibility.
-- Data labels: Recursive Mono, used sparingly for years, DOI fragments, and figure annotations.
-
-Headings use a clear modular scale without negative letter spacing. Body copy is capped near 70 characters per line.
+- Headings and identity: Source Serif 4, with Georgia fallback.
+- Interface and reading text: Inter, with Segoe UI fallback.
+- Sizes are discrete and do not scale with viewport width.
+- Body copy remains close to 70 characters per line on desktop.
 
 ## Layout
 
-- A 12-column desktop grid becomes a single-column mobile flow.
-- The first viewport pairs identity and research summary with an unframed chip-layout field.
-- Publications use a chronological rail rather than repeated cards.
-- Education and recognition form concise full-width bands below the publication record.
-- Container widths remain consistent, with deliberate asymmetry inside the hero.
+- Desktop: sticky 16rem profile sidebar plus a flexible content column.
+- Main content: About, Education & Honors, Updates, Research, Publications.
+- Mobile: one column; the profile card becomes a compact horizontal block.
+- The portrait and publication image positions are deliberately blank until
+  real, authorized images are supplied.
 
 ## Components
 
-- Floating compact navigation with text links and icon-only theme or menu controls only when useful.
-- Research tags rendered as plain inline taxonomy, not pill-heavy decoration.
-- Publication entries with year, venue, title, author line, status, and direct links.
-- Award callout integrated into the publication chronology, not isolated as a vanity metric.
-- Footer with verified ORCID and DBLP links; GitHub and email appear only after real values are configured.
+- Sticky top navigation with text destinations.
+- Profile card with bilingual name, affiliation, and verified ORCID/DBLP links.
+- Flat content cards with 8px or smaller corner radii.
+- Year-grouped update timeline.
+- Research areas distinguished by blue, teal, and gold rules.
+- Publication rows with blank 4:3 image slots, metadata, authors, venue, award,
+  and stable DOI/PDF links.
+- Compact topic filters that progressively enhance the static paper list.
 
-## Motion
+## Motion And Accessibility
 
-Use one subtle page-load reveal and a slow signal-path movement in the hero diagram. Hover and focus transitions last 160-220 ms. Disable nonessential motion under `prefers-reduced-motion: reduce`.
-
-## Responsive Behavior
-
-At narrow widths, the visual moves below the identity block, chronology labels remain left-aligned, and publication actions wrap without truncating titles. Navigation collapses only if links cannot fit without overlap.
+Only short color and underline transitions are used. Keyboard focus is always
+visible, reduced-motion preferences disable transitions, and print removes
+navigation and blank image positions. Layout supports widths down to 320px
+without horizontal scrolling.
 
 ## Absolute Avoids
 
-No gradient text, glass cards, nested cards, colored side stripes, fake citation counts, generic hero metrics, emoji icons, layout-shifting hover effects, or decorative scientific claims presented as data.
+No fabricated email or Scholar profile, fake citation counts, gradients,
+glass effects, nested cards, decorative images, negative letter spacing,
+layout-shifting hover motion, or unverified academic claims.

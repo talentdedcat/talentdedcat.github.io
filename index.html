@@ -7,19 +7,19 @@
       name="description"
       content="Shizhang Wang (王诗章) researches AI for EDA, efficient hardware systems, and low-power optimization."
     >
-    <meta name="theme-color" content="#202425">
-    <meta property="og:title" content="Shizhang Wang | AI for EDA Research">
+    <meta name="theme-color" content="#f4f6f8">
+    <meta property="og:title" content="Shizhang Wang | Academic Homepage">
     <meta
       property="og:description"
       content="Research, publications, and recognition in AI for EDA and low-power hardware design."
     >
     <meta property="og:type" content="website">
-    <title>Shizhang Wang | AI for EDA Research</title>
+    <title>Shizhang Wang | Academic Homepage</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,MONO@0,500,1&family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
       rel="stylesheet"
     >
     <link rel="stylesheet" href="styles.css">
@@ -29,341 +29,228 @@
 
     <header class="site-header">
       <nav class="site-nav" aria-label="Primary navigation">
-        <a class="site-mark" href="#about" aria-label="Shizhang Wang, home">
-          <span aria-hidden="true">SW</span>
-        </a>
+        <a class="site-name" href="#about">Shizhang Wang</a>
         <div class="nav-links">
+          <a href="#about">Home</a>
           <a href="#research">Research</a>
           <a href="#publications">Publications</a>
-          <a href="#recognition">Recognition</a>
-          <a href="#education">Education</a>
+          <a href="#recognition">Awards</a>
         </div>
       </nav>
     </header>
 
-    <main id="main-content">
-      <section class="hero" id="about" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Electronic Design Automation / Efficient Hardware</p>
-          <h1 id="hero-title">
-            <span>Shizhang Wang</span>
-            <span class="name-cn" lang="zh-CN">王诗章</span>
-          </h1>
-          <p class="role">Researcher in AI for EDA and low-power optimization</p>
-          <p class="hero-intro">
-            I am an early-career researcher working at the intersection of
-            artificial intelligence and electronic design automation. My work
-            focuses on AI for EDA, efficient hardware design, and low-power
-            optimization, with particular interest in making chip design and
-            accelerator development faster, more reliable, and more
+    <main class="page-grid" id="main-content">
+      <aside class="profile-sidebar" aria-label="Profile">
+        <div class="profile-card">
+          <div class="portrait-placeholder" aria-hidden="true"></div>
+          <div class="profile-copy">
+            <h1>Shizhang Wang <span lang="zh-CN">王诗章</span></h1>
+            <p class="profile-role">Researcher in AI for EDA</p>
+            <p class="profile-affiliation">Zhejiang University<br>Hangzhou, China</p>
+            <div class="profile-links" aria-label="Scholarly profiles">
+              <a href="https://orcid.org/0009-0005-5853-4931" target="_blank" rel="noreferrer">ORCID</a>
+              <a href="https://dblp.org/pid/264/1048" target="_blank" rel="noreferrer">DBLP</a>
+            </div>
+          </div>
+        </div>
+        <div class="research-keywords" aria-label="Research interests">
+          <span>AI for EDA</span>
+          <span>Low-power design</span>
+          <span>Efficient hardware</span>
+        </div>
+      </aside>
+
+      <div class="content-column">
+        <section class="content-card about-card" id="about" aria-labelledby="about-title">
+          <p class="section-kicker">Academic profile</p>
+          <h2 id="about-title">About Me</h2>
+          <p>
+            I am a researcher working at the intersection of artificial
+            intelligence and electronic design automation. My research focuses
+            on <strong>AI for EDA</strong>, <strong>low-power optimization</strong>,
+            and efficient hardware systems, with the goal of making chip design
+            and accelerator development faster, more reliable, and more
             energy-efficient.
           </p>
-          <div class="profile-links" aria-label="Scholarly profiles">
-            <a
-              href="https://orcid.org/0009-0005-5853-4931"
-              target="_blank"
-              rel="noreferrer"
-            >ORCID <span aria-hidden="true">↗</span></a>
-            <a
-              href="https://dblp.org/pid/264/1048"
-              target="_blank"
-              rel="noreferrer"
-            >DBLP <span aria-hidden="true">↗</span></a>
-            <a href="#publications">View publications</a>
-          </div>
-        </div>
-
-        <figure
-          class="chip-figure"
-          aria-label="Abstract chip floorplan showing compute, timing, routing, and power regions connected by signal paths"
-        >
-          <div class="chip-meta chip-meta-top" aria-hidden="true">
-            <span>DIE / 04</span>
-            <span>ROUTE STATUS: ACTIVE</span>
-          </div>
-          <div class="chip-canvas" aria-hidden="true">
-            <div class="chip-grid"></div>
-            <div class="chip-block chip-block-a"><span>ML</span></div>
-            <div class="chip-block chip-block-b"><span>PWR</span></div>
-            <div class="chip-block chip-block-c"><span>STA</span></div>
-            <div class="chip-block chip-block-d"><span>RTL</span></div>
-            <div class="chip-core">
-              <span class="core-index">CORE 01</span>
-              <span class="core-label">AI / EDA</span>
-            </div>
-            <div class="route route-a"></div>
-            <div class="route route-b"></div>
-            <div class="route route-c"></div>
-            <div class="route route-d"></div>
-            <span class="contact contact-a"></span>
-            <span class="contact contact-b"></span>
-            <span class="contact contact-c"></span>
-            <span class="contact contact-d"></span>
-          </div>
-          <figcaption>
-            A conceptual chip floorplan linking machine learning, timing,
-            hardware description, and power optimization.
-          </figcaption>
-        </figure>
-      </section>
-
-      <section class="research section-shell" id="research" aria-labelledby="research-title">
-        <div class="section-heading">
-          <p class="section-index">01 / Research</p>
-          <h2 id="research-title">Research through-lines</h2>
           <p>
-            Learning methods become useful when they respect the constraints of
-            physical design, architecture, and energy.
+            I have published peer-reviewed work in leading conferences and
+            journals, including ICCAD, ASP-DAC, MLCAD, ACM TODAES, and IEICE
+            Electronics Express. Our work on agile LLM accelerator development
+            received the ICCAD 2024 Best Paper Award in the Front-End category.
           </p>
-        </div>
-        <p class="research-summary">
-          I have contributed to peer-reviewed work published at ICCAD,
-          ASP-DAC, MLCAD, ACM TODAES, and IEICE Electronics Express. Our work
-          on agile LLM accelerator development received the ACM/IEEE William
-          J. McCalla ICCAD Best Paper Award in the Front-End category.
-        </p>
-        <div class="research-list">
-          <article class="research-theme">
-            <p class="theme-number">R.01</p>
-            <h3>AI for EDA</h3>
-            <p>
-              Machine learning for standard-cell characterization, circuit
-              understanding, design-space exploration, and faster design
-              closure.
-            </p>
-            <p class="theme-taxonomy">Characterization / Graph learning / DSE</p>
-          </article>
-          <article class="research-theme">
-            <p class="theme-number">R.02</p>
-            <h3>Low-power optimization</h3>
-            <p>
-              Methods that reduce energy and hardware overhead while preserving
-              the timing and quality requirements of real systems.
-            </p>
-            <p class="theme-taxonomy">Power / Timing / Architecture</p>
-          </article>
-          <article class="research-theme">
-            <p class="theme-number">R.03</p>
-            <h3>Efficient hardware systems</h3>
-            <p>
-              Agile accelerator and processor design for workloads spanning
-              large language models and real-time signal processing.
-            </p>
-            <p class="theme-taxonomy">RISC-V / Accelerators / Edge AI</p>
-          </article>
-        </div>
-      </section>
+        </section>
 
-      <section
-        class="publications section-shell"
-        id="publications"
-        aria-labelledby="publications-title"
-      >
-        <div class="section-heading publications-heading">
-          <p class="section-index">02 / Publications</p>
-          <h2 id="publications-title">Peer-reviewed work</h2>
-          <p>
-            Publications are ordered by year. Author and venue records are
-            linked to stable scholarly sources.
-          </p>
-        </div>
-
-        <div class="publication-toolbar">
-          <div class="filter-group" role="group" aria-label="Filter publications">
-            <button type="button" data-filter="all" aria-pressed="true">All</button>
-            <button type="button" data-filter="ai-eda" aria-pressed="false">AI for EDA</button>
-            <button type="button" data-filter="hardware" aria-pressed="false">Hardware</button>
-            <button type="button" data-filter="low-power" aria-pressed="false">Low power</button>
+        <section class="content-card details-card" id="education" aria-label="Education and honors">
+          <div class="details-column">
+            <h2 class="compact-heading">Education &amp; Affiliation</h2>
+            <div class="institution-list">
+              <article class="institution">
+                <span class="institution-mark" aria-hidden="true">ZJU</span>
+                <div>
+                  <h3>Zhejiang University</h3>
+                  <p>AI for EDA and efficient hardware systems</p>
+                  <p class="meta-line">Current affiliation · Hangzhou, China</p>
+                </div>
+              </article>
+              <article class="institution">
+                <span class="institution-mark institution-mark-secondary" aria-hidden="true">HBUT</span>
+                <div>
+                  <h3>Hubei University of Technology</h3>
+                  <p>Integrated Circuit Design and Integrated Systems</p>
+                  <p class="meta-line">Undergraduate study · Wuhan, China</p>
+                </div>
+              </article>
+            </div>
           </div>
-          <p class="result-count" aria-live="polite">Showing 5 publications</p>
-        </div>
+          <div class="details-column" id="recognition">
+            <h2 class="compact-heading">Honors &amp; Awards</h2>
+            <div class="award-item">
+              <div>
+                <h3>William J. McCalla ICCAD Best Paper Award</h3>
+                <p>Front-End category, ACM/IEEE ICCAD</p>
+                <a
+                  href="https://confcats-event-sessions.s3.amazonaws.com/iccad24/uploads/ICCAD_2024_Program_Final.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >Official program</a>
+              </div>
+              <time datetime="2024">2024</time>
+            </div>
+          </div>
+        </section>
 
-        <div class="publication-list">
-          <article
-            class="publication"
-            data-publication-id="zlibboost"
-            data-topics="ai-eda"
-          >
-            <div class="publication-date">
-              <span class="publication-year">2026</span>
-              <span class="publication-venue-short">TODAES</span>
+        <section class="content-card updates-card" id="updates" aria-labelledby="updates-title">
+          <div class="card-heading-row">
+            <h2 class="compact-heading" id="updates-title">Updates</h2>
+            <span class="heading-rule" aria-hidden="true"></span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-items">
+              <p><time datetime="2026-05">May</time><span><cite>ZlibBoost</cite> appears in ACM TODAES.</span></p>
+              <p><time datetime="2026-01">Jan</time><span>Our RISC-V audio processor work appears in IEICE Electronics Express.</span></p>
             </div>
-            <div class="publication-body">
-              <h3>ZlibBoost: An Efficient and Flexible Open-Source Framework for Standard Cell Characterization</h3>
-              <p class="authors">
-                Zhengrui Chen, Chengjun Guo, <strong>Shizhang Wang</strong>, Guozhu Feng,
-                Zixuan Song, Zhenhua Wu, Xunzhao Yin, Weiquan Song, Li Zhang,
-                Zheyu Yan, and Cheng Zhuo
-              </p>
-              <p class="venue">ACM Transactions on Design Automation of Electronic Systems, 31(4), Article 74</p>
-              <p class="publication-topics">Standard-cell characterization / AI for EDA</p>
+            <div class="timeline-year">2025</div>
+            <div class="timeline-items">
+              <p><time datetime="2025-01">Jan</time><span>Invited work on machine-learning-assisted cell characterization appears at ASP-DAC.</span></p>
             </div>
-            <div class="publication-actions">
-              <a href="https://doi.org/10.1145/3747182" target="_blank" rel="noreferrer">DOI <span aria-hidden="true">↗</span></a>
+            <div class="timeline-year">2024</div>
+            <div class="timeline-items">
+              <p><time datetime="2024-10">Oct</time><span>Our agile LLM accelerator paper receives the ICCAD Best Paper Award.</span></p>
+              <p><time datetime="2024-09">Sep</time><span>Subcircuit identification work appears at MLCAD.</span></p>
             </div>
-          </article>
+          </div>
+        </section>
 
-          <article
-            class="publication"
-            data-publication-id="riscv-audio"
-            data-topics="hardware low-power"
-          >
-            <div class="publication-date">
-              <span class="publication-year">2026</span>
-              <span class="publication-venue-short">ELEX</span>
-            </div>
-            <div class="publication-body">
-              <h3>A High-Efficiency RISC-V Microprocessor Architecture Optimized for Audio Noise Suppression</h3>
-              <p class="authors">
-                Hao Gao, Yifei Jin, <strong>Shizhang Wang</strong>, Boyan Duan,
-                Boqu Zhang, Yue Zheng, Zhuo Yang, and Li Zhang
-              </p>
-              <p class="venue">IEICE Electronics Express, 23(2)</p>
-              <p class="publication-topics">RISC-V / Real-time processing / Low power</p>
-            </div>
-            <div class="publication-actions">
-              <a href="https://doi.org/10.1587/elex.22.20250120" target="_blank" rel="noreferrer">DOI <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
+        <section class="content-card research-card" id="research" aria-labelledby="research-title">
+          <div class="card-heading-row">
+            <h2 class="compact-heading" id="research-title">Research</h2>
+            <span class="heading-rule" aria-hidden="true"></span>
+          </div>
+          <div class="research-grid">
+            <article>
+              <span class="research-index">01</span>
+              <h3>AI for EDA</h3>
+              <p>Machine learning for cell characterization, circuit understanding, and design-space exploration.</p>
+            </article>
+            <article>
+              <span class="research-index">02</span>
+              <h3>Low-power optimization</h3>
+              <p>Energy-aware methods that preserve the timing, quality, and reliability constraints of real systems.</p>
+            </article>
+            <article>
+              <span class="research-index">03</span>
+              <h3>Efficient hardware</h3>
+              <p>Agile accelerator and processor design for language models and real-time signal processing.</p>
+            </article>
+          </div>
+        </section>
 
-          <article
-            class="publication"
-            data-publication-id="aspdac-library"
-            data-topics="ai-eda"
-          >
-            <div class="publication-date">
-              <span class="publication-year">2025</span>
-              <span class="publication-venue-short">ASP-DAC</span>
-            </div>
-            <div class="publication-body">
-              <h3>Invited Paper: Boosting Standard Cell Library Characterization with Machine Learning</h3>
-              <p class="authors">
-                Zhengrui Chen, Chengjun Guo, Zixuan Song, Guozhu Feng,
-                <strong>Shizhang Wang</strong>, Li Zhang, Xunzhao Yin, Zhenhua Wu,
-                Zheyu Yan, and Cheng Zhuo
-              </p>
-              <p class="venue">30th Asia and South Pacific Design Automation Conference, pp. 385-391</p>
-              <p class="publication-topics">Machine learning / Library characterization</p>
-            </div>
-            <div class="publication-actions">
-              <a href="https://doi.org/10.1145/3658617.3703638" target="_blank" rel="noreferrer">DOI <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-
-          <article
-            class="publication publication-awarded"
-            data-publication-id="iccad-llm"
-            data-topics="ai-eda hardware low-power"
-          >
-            <div class="publication-date">
-              <span class="publication-year">2024</span>
-              <span class="publication-venue-short">ICCAD</span>
-            </div>
-            <div class="publication-body">
-              <p class="award-label">Best Paper / Front-End</p>
-              <h3>An Agile Framework for Efficient LLM Accelerator Development and Model Inference</h3>
-              <p class="authors">
-                Lvcheng Chen, Ying Wu, Chenyi Wen, <strong>Shizhang Wang</strong>,
-                Li Zhang, Bei Yu, Qi Sun, and Cheng Zhuo
-              </p>
-              <p class="venue">43rd IEEE/ACM International Conference on Computer-Aided Design, Article 200</p>
-              <p class="publication-topics">LLM acceleration / Agile DSE / Edge inference</p>
-            </div>
-            <div class="publication-actions">
-              <a href="https://doi.org/10.1145/3676536.3676753" target="_blank" rel="noreferrer">DOI <span aria-hidden="true">↗</span></a>
-              <a href="https://www.cse.cuhk.edu.hk/~byu/papers/C234-ICCAD2024-BinaryLLM.pdf" target="_blank" rel="noreferrer">Paper <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-
-          <article
-            class="publication"
-            data-publication-id="mlcad-subgraph"
-            data-topics="ai-eda"
-          >
-            <div class="publication-date">
-              <span class="publication-year">2024</span>
-              <span class="publication-venue-short">MLCAD</span>
-            </div>
-            <div class="publication-body">
-              <h3>Efficient Subgraph Matching Framework for Fast Subcircuit Identification</h3>
-              <p class="authors">
-                Bohao Li, <strong>Shizhang Wang</strong>, Tinghuan Chen, Qi Sun,
-                and Cheng Zhuo
-              </p>
-              <p class="venue">ACM/IEEE 6th Symposium on Machine Learning for CAD</p>
-              <p class="publication-topics">Graph matching / Subcircuit identification</p>
-            </div>
-            <div class="publication-actions">
-              <a href="https://doi.org/10.1109/MLCAD62225.2024.10740256" target="_blank" rel="noreferrer">DOI <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section
-        class="recognition section-shell"
-        id="recognition"
-        aria-labelledby="recognition-title"
-      >
-        <div class="recognition-index" aria-hidden="true">A / 01</div>
-        <div class="recognition-copy">
-          <p class="section-index">03 / Recognition</p>
-          <h2 id="recognition-title">ACM/IEEE William J. McCalla ICCAD Best Paper Award</h2>
-          <p class="recognition-category">Front-End category / ICCAD 2024</p>
-          <p>
-            Awarded for <cite>An Agile Framework for Efficient LLM Accelerator
-            Development and Model Inference</cite>, a collaborative framework
-            for agile accelerator design and efficient LLM inference.
-          </p>
-          <a
-            href="https://confcats-event-sessions.s3.amazonaws.com/iccad24/uploads/ICCAD_2024_Program_Final.pdf"
-            target="_blank"
-            rel="noreferrer"
-          >Official program <span aria-hidden="true">↗</span></a>
-        </div>
-      </section>
-
-      <section
-        class="education section-shell"
-        id="education"
-        aria-labelledby="education-title"
-      >
-        <div class="section-heading">
-          <p class="section-index">04 / Education & Affiliation</p>
-          <h2 id="education-title">From integrated circuits to design automation</h2>
-        </div>
-        <div class="affiliation-list">
-          <article class="affiliation">
-            <p class="affiliation-time">Current affiliation</p>
+        <section class="content-card publications-card" id="publications" aria-labelledby="publications-title">
+          <div class="card-heading-row publications-heading">
             <div>
-              <h3>Zhejiang University</h3>
-              <p>Hangzhou, China</p>
-              <p>Research in AI for EDA, design automation, and efficient hardware systems.</p>
+              <p class="section-kicker">Reverse chronological</p>
+              <h2 class="compact-heading" id="publications-title">Publications</h2>
             </div>
-          </article>
-          <article class="affiliation">
-            <p class="affiliation-time">Undergraduate study</p>
-            <div>
-              <h3>Hubei University of Technology</h3>
-              <p>Wuhan, China</p>
-              <p>Integrated Circuit Design and Integrated Systems.</p>
+            <p class="result-count" aria-live="polite">Showing 5 publications</p>
+          </div>
+
+          <div class="publication-toolbar">
+            <div class="filter-group" role="group" aria-label="Filter publications">
+              <button type="button" data-filter="all" aria-pressed="true">All</button>
+              <button type="button" data-filter="ai-eda" aria-pressed="false">AI for EDA</button>
+              <button type="button" data-filter="hardware" aria-pressed="false">Hardware</button>
+              <button type="button" data-filter="low-power" aria-pressed="false">Low power</button>
             </div>
-          </article>
-        </div>
-      </section>
+          </div>
+
+          <div class="publication-list">
+            <article class="publication" data-publication-id="zlibboost" data-topics="ai-eda">
+              <div class="publication-visual" aria-hidden="true"></div>
+              <div class="publication-body">
+                <div class="publication-meta"><time datetime="2026">2026</time><span>TODAES</span></div>
+                <h3>ZlibBoost: An Efficient and Flexible Open-Source Framework for Standard Cell Characterization</h3>
+                <p class="authors">Zhengrui Chen, Chengjun Guo, <strong>Shizhang Wang</strong>, Guozhu Feng, Zixuan Song, Zhenhua Wu, Xunzhao Yin, Weiquan Song, Li Zhang, Zheyu Yan, and Cheng Zhuo</p>
+                <p class="venue">ACM Transactions on Design Automation of Electronic Systems, 31(4), Article 74</p>
+                <div class="publication-actions"><a href="https://doi.org/10.1145/3747182" target="_blank" rel="noreferrer">DOI</a></div>
+              </div>
+            </article>
+
+            <article class="publication" data-publication-id="riscv-audio" data-topics="hardware low-power">
+              <div class="publication-visual" aria-hidden="true"></div>
+              <div class="publication-body">
+                <div class="publication-meta"><time datetime="2026">2026</time><span>ELEX</span></div>
+                <h3>A High-Efficiency RISC-V Microprocessor Architecture Optimized for Audio Noise Suppression</h3>
+                <p class="authors">Hao Gao, Yifei Jin, <strong>Shizhang Wang</strong>, Boyan Duan, Boqu Zhang, Yue Zheng, Zhuo Yang, and Li Zhang</p>
+                <p class="venue">IEICE Electronics Express, 23(2)</p>
+                <div class="publication-actions"><a href="https://doi.org/10.1587/elex.22.20250120" target="_blank" rel="noreferrer">DOI</a></div>
+              </div>
+            </article>
+
+            <article class="publication" data-publication-id="aspdac-library" data-topics="ai-eda">
+              <div class="publication-visual" aria-hidden="true"></div>
+              <div class="publication-body">
+                <div class="publication-meta"><time datetime="2025">2025</time><span>ASP-DAC</span><span class="status-tag">Invited</span></div>
+                <h3>Invited Paper: Boosting Standard Cell Library Characterization with Machine Learning</h3>
+                <p class="authors">Zhengrui Chen, Chengjun Guo, Zixuan Song, Guozhu Feng, <strong>Shizhang Wang</strong>, Li Zhang, Xunzhao Yin, Zhenhua Wu, Zheyu Yan, and Cheng Zhuo</p>
+                <p class="venue">30th Asia and South Pacific Design Automation Conference, pp. 385-391</p>
+                <div class="publication-actions"><a href="https://doi.org/10.1145/3658617.3703638" target="_blank" rel="noreferrer">DOI</a></div>
+              </div>
+            </article>
+
+            <article class="publication publication-awarded" data-publication-id="iccad-llm" data-topics="ai-eda hardware low-power">
+              <div class="publication-visual" aria-hidden="true"></div>
+              <div class="publication-body">
+                <div class="publication-meta"><time datetime="2024">2024</time><span>ICCAD</span><span class="status-tag award-tag">Best Paper</span></div>
+                <h3>An Agile Framework for Efficient LLM Accelerator Development and Model Inference</h3>
+                <p class="authors">Lvcheng Chen, Ying Wu, Chenyi Wen, <strong>Shizhang Wang</strong>, Li Zhang, Bei Yu, Qi Sun, and Cheng Zhuo</p>
+                <p class="venue">43rd IEEE/ACM International Conference on Computer-Aided Design, Article 200</p>
+                <div class="publication-actions">
+                  <a href="https://doi.org/10.1145/3676536.3676753" target="_blank" rel="noreferrer">DOI</a>
+                  <a href="https://www.cse.cuhk.edu.hk/~byu/papers/C234-ICCAD2024-BinaryLLM.pdf" target="_blank" rel="noreferrer">Paper</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="publication" data-publication-id="mlcad-subgraph" data-topics="ai-eda">
+              <div class="publication-visual" aria-hidden="true"></div>
+              <div class="publication-body">
+                <div class="publication-meta"><time datetime="2024">2024</time><span>MLCAD</span></div>
+                <h3>Efficient Subgraph Matching Framework for Fast Subcircuit Identification</h3>
+                <p class="authors">Bohao Li, <strong>Shizhang Wang</strong>, Tinghuan Chen, Qi Sun, and Cheng Zhuo</p>
+                <p class="venue">ACM/IEEE 6th Symposium on Machine Learning for CAD</p>
+                <div class="publication-actions"><a href="https://doi.org/10.1109/MLCAD62225.2024.10740256" target="_blank" rel="noreferrer">DOI</a></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          <p>© 2026 Shizhang Wang</p>
+          <p>AI for EDA · Low-power optimization · Efficient hardware</p>
+        </footer>
+      </div>
     </main>
-
-    <footer class="site-footer">
-      <div>
-        <p class="footer-name">Shizhang Wang <span lang="zh-CN">王诗章</span></p>
-        <p>AI for EDA / Low-power optimization / Efficient hardware</p>
-      </div>
-      <div class="footer-links">
-        <a href="https://orcid.org/0009-0005-5853-4931" target="_blank" rel="noreferrer">ORCID</a>
-        <a href="https://dblp.org/pid/264/1048" target="_blank" rel="noreferrer">DBLP</a>
-      </div>
-      <p class="footer-note">Built for open scholarly access.</p>
-    </footer>
 
     <script src="data/publications.js"></script>
     <script src="script.js" defer></script>
