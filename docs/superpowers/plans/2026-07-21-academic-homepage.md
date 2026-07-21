@@ -155,7 +155,7 @@ git commit -m "feat: add verified publication data"
 - Create: `index.html`
 - Create: `assets/favicon.svg`
 
-- [ ] **Step 1: Write failing static content tests**
+- [x] **Step 1: Write failing static content tests**
 
 Create `tests/site.test.js`. Read `index.html` as text and assert the bilingual name, five publication IDs, required section anchors, ORCID, DBLP, best-paper wording, all DOI URLs, and absence of `quadrotor`, fake email links, and fake citation metrics.
 
@@ -192,29 +192,29 @@ test('contains scholarly links and no unsupported claims', () => {
 });
 ```
 
-- [ ] **Step 2: Run static tests and verify RED**
+- [x] **Step 2: Run static tests and verify RED**
 
 Run: `node --test tests/site.test.js`
 
 Expected: FAIL with `ENOENT` for `index.html`.
 
-- [ ] **Step 3: Implement semantic HTML and fallback publications**
+- [x] **Step 3: Implement semantic HTML and fallback publications**
 
 Create `index.html` with `header`, `main`, `section`, `article`, `nav`, and `footer`. Include skip navigation, a visible bilingual identity, the approved introduction, three research themes, five complete publication articles in reverse chronology, the award section, affiliation/education timeline, ORCID and DBLP links, and the hero chip diagram as decorative DOM elements inside a labelled `figure`. Load `data/publications.js` before deferred `script.js`.
 
 Every external link must include `target="_blank" rel="noreferrer"`. Publication filter buttons use `data-filter="all|ai-eda|hardware|low-power"`, and the default page remains complete if scripts fail.
 
-- [ ] **Step 4: Create the deterministic favicon**
+- [x] **Step 4: Create the deterministic favicon**
 
 Create `assets/favicon.svg` with a 32-by-32 viewBox, tinted near-black background, signal-green routing line, and copper contact nodes. Use no text and no embedded external resources.
 
-- [ ] **Step 5: Run static tests and verify GREEN**
+- [x] **Step 5: Run static tests and verify GREEN**
 
 Run: `node --test tests/site.test.js`
 
 Expected: 3 tests pass, 0 fail.
 
-- [ ] **Step 6: Commit the semantic page slice**
+- [x] **Step 6: Commit the semantic page slice**
 
 ```bash
 git add index.html assets/favicon.svg tests/site.test.js

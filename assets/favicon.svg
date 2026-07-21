@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Shizhang Wang routing mark">
+  <rect width="32" height="32" rx="5" fill="#202425"/>
+  <path d="M6 8h8v7h10v9h-8" fill="none" stroke="#39a56d" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M6 24h5v-5h5" fill="none" stroke="#b77652" stroke-width="2" stroke-linecap="square"/>
+  <circle cx="6" cy="8" r="2" fill="#b77652"/>
+  <circle cx="24" cy="24" r="2" fill="#b77652"/>
+  <circle cx="6" cy="24" r="2" fill="#39a56d"/>
+</svg>
