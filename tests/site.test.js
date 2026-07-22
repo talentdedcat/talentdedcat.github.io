@@ -120,6 +120,7 @@ test('uses the supplied portrait with stable responsive framing', () => {
   );
   assert.ok(css.includes('.profile-photo'));
   assert.match(css, /\.profile-photo[\s\S]*object-fit:\s*cover/);
+  assert.match(css, /\.profile-photo[\s\S]*height:\s*auto/);
   assert.match(
     css,
     /\.language-switch[\s\S]*button\[aria-pressed="true"\]/,
@@ -236,9 +237,17 @@ test('documents preview, deployment, publication updates, and optional content',
     'public email',
     'CV',
     'Google Scholar',
-    'portrait',
     'Zhejiang University program',
   ]) {
     assert.ok(readme.includes(value), `missing README guidance: ${value}`);
+  }
+
+  for (const value of [
+    'Language switch',
+    'English is the default',
+    'publication titles remain in English',
+    'assets/profile/shizhang-wang.jpg',
+  ]) {
+    assert.ok(readme.includes(value), `missing bilingual guidance: ${value}`);
   }
 });

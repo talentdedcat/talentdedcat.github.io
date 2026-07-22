@@ -23,6 +23,18 @@ git diff --check
 
 测试覆盖论文数量与顺序、DOI、获奖信息、同名作者排除、静态页面内容、筛选逻辑、CSS 可访问性约束和本文档的维护说明。
 
+## Language switch
+
+English is the default and complete no-JavaScript version. Interface copy is
+stored in the translation dictionary in `script.js`; publication titles remain in English,
+along with authors, venue names, DOI labels, and Paper labels. When adding
+interface text, add matching English and Chinese keys and mark the HTML node
+with `data-i18n`, `data-i18n-alt`, or `data-i18n-aria-label`.
+
+The profile photograph is `assets/profile/shizhang-wang.jpg`. Keep its 2:3
+aspect ratio and explicit HTML dimensions when replacing it so the sidebar does
+not shift while loading.
+
 ## GitHub Pages
 
 线上地址：[https://talentdedcat.github.io/](https://talentdedcat.github.io/)
@@ -65,7 +77,6 @@ git diff --check
 - public email：确认用于公开展示的邮箱后加入联系入口；不要使用私人邮箱占位值。
 - CV：将 PDF 放入 `assets/`，并在首屏学术链接中添加下载入口。
 - Google Scholar：取得个人 Scholar ID 后添加稳定个人主页链接，不展示自动抓取但未经核验的引用数。
-- portrait：当前侧栏头像为空白图位，取得本人照片后可替换；论文缩略图已经使用论文中的核心架构或工作流图。
 - Zhejiang University program：确认浙江大学当前项目、学位名称和起止时间后，更新 `education` 部分的保守表述。
 
 ## 内容来源
@@ -87,6 +98,7 @@ DBLP 当前将一篇 2020 年无人机论文合并到同名作者页面。该条
 .
 ├── assets/favicon.svg
 ├── assets/institutions/
+├── assets/profile/shizhang-wang.jpg
 ├── assets/publications/
 ├── assets/SOURCES.md
 ├── data/publications.js
@@ -94,6 +106,7 @@ DBLP 当前将一篇 2020 年无人机论文合并到同名作者页面。该条
 ├── script.js
 ├── styles.css
 └── tests/
+    ├── localization.test.js
     ├── publications.test.js
     └── site.test.js
 ```

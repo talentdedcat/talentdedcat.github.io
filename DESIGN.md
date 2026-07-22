@@ -36,14 +36,14 @@ who scan academic homepages for affiliation, topics, awards, and papers.
 - Desktop: sticky 255px profile sidebar plus an approximately 825px content column.
 - Main content: About, Education & Honors, Updates, Research, Publications.
 - Mobile: one column; the profile card becomes a compact horizontal block.
-- The portrait remains deliberately blank until a real portrait is supplied.
+- The supplied portrait uses a stable 2:3 desktop frame and a face-aware mobile crop.
 - Institution marks come from official university sources; publication visuals
   show core architecture or workflow figures from the primary papers.
 
 ## Components
 
-- Sticky top navigation with text destinations.
-- Profile card with bilingual name, affiliation, and verified ORCID/DBLP links.
+- Sticky top navigation with text destinations and a segmented language control.
+- Profile card with a localized name, real portrait, affiliation, and verified ORCID/DBLP links.
 - Flat content cards with 8px or smaller corner radii.
 - Year-grouped update timeline.
 - Research areas distinguished by blue, teal, and gold rules.
@@ -55,7 +55,9 @@ who scan academic homepages for affiliation, topics, awards, and papers.
 
 Only short color and underline transitions are used. Keyboard focus is always
 visible, reduced-motion preferences disable transitions, and print removes
-navigation and blank image positions. Layout supports widths down to 320px
+navigation and the profile photograph. English is the default language; Chinese
+interface copy is progressively applied without translating bibliographic
+publication records. Layout supports widths down to 320px
 without horizontal scrolling.
 
 ## Absolute Avoids
