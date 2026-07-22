@@ -109,6 +109,23 @@ test('uses the approved reference layout and real visual assets', () => {
   assert.doesNotMatch(source, /chip-figure|chip-canvas/i);
 });
 
+test('uses the supplied portrait with stable responsive framing', () => {
+  const source = readProjectFile('index.html');
+  const css = readProjectFile('styles.css');
+
+  assert.ok(source.includes('src="assets/profile/shizhang-wang.jpg"'));
+  assert.match(
+    source,
+    /class="profile-photo"[\s\S]*width="800"[\s\S]*height="1200"/,
+  );
+  assert.ok(css.includes('.profile-photo'));
+  assert.match(css, /\.profile-photo[\s\S]*object-fit:\s*cover/);
+  assert.match(
+    css,
+    /\.language-switch[\s\S]*button\[aria-pressed="true"\]/,
+  );
+});
+
 test('documents the official marks and primary-paper figure sources', () => {
   const sources = readProjectFile('assets/SOURCES.md');
   for (const value of [
