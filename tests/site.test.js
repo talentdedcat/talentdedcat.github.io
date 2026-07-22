@@ -13,7 +13,6 @@ test('renders the verified identity and core sections', () => {
   const source = readProjectFile('index.html');
   for (const value of [
     'Shizhang Wang',
-    '王诗章',
     'id="research"',
     'id="publications"',
     'id="recognition"',
@@ -23,9 +22,8 @@ test('renders the verified identity and core sections', () => {
   }
 });
 
-test('uses a tightly cropped ZJU emblem and the revised research statement', () => {
+test('uses a tightly cropped ZJU emblem', () => {
   const source = readProjectFile('index.html');
-  const normalizedSource = source.replace(/\s+/g, ' ');
   const zjuMark = fs.readFileSync(
     path.join(root, 'assets/institutions/zhejiang-university.png'),
   );
@@ -34,12 +32,6 @@ test('uses a tightly cropped ZJU emblem and the revised research statement', () 
 
   assert.equal(width, height, 'ZJU emblem asset should be square');
   assert.ok(width >= 320, 'ZJU emblem should retain enough source resolution');
-  assert.ok(
-    normalizedSource.includes(
-      'My research focuses on <strong>AI for EDA</strong> and <strong>low-power optimization</strong>, with an emphasis on design methodologies and energy-efficient techniques for chip and hardware design.',
-    ),
-    'missing revised AI-for-EDA research statement',
-  );
   assert.doesNotMatch(source, /accelerate conventional EDA workflows/i);
   assert.doesNotMatch(source, /with the goal of making chip design/i);
 });
@@ -51,12 +43,53 @@ test('keeps the AI-for-EDA research summary concise', () => {
   assert.doesNotMatch(source, /circuit understanding|design-space exploration/i);
 });
 
+test('ships an English-only default view with bilingual controls', () => {
+  const source = readProjectFile('index.html');
+
+  assert.doesNotMatch(source, /[\u3400-\u9fff]/u);
+  assert.match(source, /data-language="en"[^>]*aria-pressed="true"/);
+  assert.match(source, /data-language="zh"[^>]*aria-pressed="false"/);
+  assert.ok(source.includes('data-i18n="profile.name"'));
+  assert.ok(source.includes('data-i18n="about.body1"'));
+  assert.ok(source.includes('data-i18n-aria-label="language.label"'));
+});
+
+test('keeps verified publication records outside the translation layer', () => {
+  const source = readProjectFile('index.html');
+  const publicationList = source.match(
+    /<div class="publication-list">([\s\S]*?)<\/section>/,
+  )?.[1] ?? '';
+
+  assert.ok(publicationList.includes(
+    'ZlibBoost: An Efficient and Flexible Open-Source Framework',
+  ));
+  assert.ok(publicationList.includes(
+    'An Agile Framework for Efficient LLM Accelerator Development',
+  ));
+  assert.doesNotMatch(publicationList, /<h3[^>]*data-i18n/);
+  assert.doesNotMatch(publicationList, /class="authors"[^>]*data-i18n/);
+  assert.doesNotMatch(publicationList, /class="venue"[^>]*data-i18n/);
+});
+
+test('uses the refined research and profile copy', () => {
+  const source = readProjectFile('index.html').replace(/\s+/g, ' ');
+
+  assert.ok(source.includes(
+    'Processor architecture optimization and accelerator design.',
+  ));
+  assert.ok(source.includes('I study AI for EDA and low-power optimization.'));
+  assert.doesNotMatch(
+    source,
+    /Agile accelerator and processor design for language models/i,
+  );
+});
+
 test('uses the approved reference layout and real visual assets', () => {
   const source = readProjectFile('index.html');
   for (const value of [
     'class="page-grid"',
     'class="profile-card"',
-    'class="portrait-placeholder"',
+    'class="profile-photo"',
     'class="content-card about-card"',
     'id="updates"',
     'class="publication-figure"',

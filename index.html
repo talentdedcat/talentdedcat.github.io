@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-language="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Shizhang Wang (王诗章) researches AI for EDA, efficient hardware systems, and low-power optimization."
+      content="Shizhang Wang researches AI for EDA, processor architecture, and low-power optimization."
     >
     <meta name="theme-color" content="#2d3035">
     <meta property="og:title" content="Shizhang Wang | Academic Homepage">
@@ -25,63 +25,73 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <a class="skip-link" href="#main-content" data-i18n="skip.main">Skip to main content</a>
 
     <header class="site-header">
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a class="site-name" href="#about">Shizhang Wang</a>
-        <div class="nav-links">
-          <a href="#about">Home</a>
-          <a href="#research">Research</a>
-          <a href="#publications">Publications</a>
-          <a href="#recognition">Awards</a>
+      <nav class="site-nav" aria-label="Primary navigation" data-i18n-aria-label="nav.label">
+        <a class="site-name" href="#about" data-i18n="profile.name">Shizhang Wang</a>
+        <div class="nav-actions">
+          <div class="nav-links">
+            <a href="#about" data-i18n="nav.home">Home</a>
+            <a href="#research" data-i18n="nav.research">Research</a>
+            <a href="#publications" data-i18n="nav.publications">Publications</a>
+            <a href="#recognition" data-i18n="nav.awards">Awards</a>
+          </div>
+          <div
+            class="language-switch"
+            role="group"
+            aria-label="Choose page language"
+            data-i18n-aria-label="language.label"
+          >
+            <button type="button" data-language="en" aria-pressed="true" data-i18n="language.en">EN</button>
+            <button type="button" data-language="zh" aria-pressed="false" data-i18n="language.zh">CN</button>
+          </div>
         </div>
       </nav>
     </header>
 
     <main class="page-grid" id="main-content">
-      <aside class="profile-sidebar" aria-label="Profile">
+      <aside class="profile-sidebar" aria-label="Profile" data-i18n-aria-label="profile.label">
         <div class="profile-card">
-          <div class="portrait-placeholder" aria-hidden="true"></div>
+          <img
+            class="profile-photo"
+            src="assets/profile/shizhang-wang.jpg"
+            width="800"
+            height="1200"
+            alt="Portrait of Shizhang Wang"
+            data-i18n-alt="profile.photoAlt"
+          >
           <div class="profile-copy">
-            <h1>Shizhang Wang <span lang="zh-CN">王诗章</span></h1>
-            <p class="profile-role">Researcher in AI for EDA</p>
-            <p class="profile-affiliation">Zhejiang University<br>Hangzhou, China</p>
-            <div class="profile-links" aria-label="Scholarly profiles">
+            <h1 data-i18n="profile.name">Shizhang Wang</h1>
+            <p class="profile-role" data-i18n="profile.role">Researcher in AI for EDA</p>
+            <p class="profile-affiliation">
+              <span data-i18n="profile.institution">Zhejiang University</span><br>
+              <span data-i18n="profile.location">Hangzhou, China</span>
+            </p>
+            <div class="profile-links" aria-label="Scholarly profiles" data-i18n-aria-label="profile.linksLabel">
               <a href="https://orcid.org/0009-0005-5853-4931" target="_blank" rel="noreferrer">ORCID</a>
               <a href="https://dblp.org/pid/264/1048" target="_blank" rel="noreferrer">DBLP</a>
             </div>
           </div>
         </div>
-        <div class="research-keywords" aria-label="Research interests">
+        <div class="research-keywords" aria-label="Research interests" data-i18n-aria-label="profile.interestsLabel">
           <span>AI for EDA</span>
-          <span>Low-power design</span>
-          <span>Efficient hardware</span>
+          <span data-i18n="profile.lowPower">Low-power design</span>
+          <span data-i18n="profile.hardware">Efficient hardware</span>
         </div>
       </aside>
 
       <div class="content-column">
         <section class="content-card about-card" id="about" aria-labelledby="about-title">
-          <p class="section-kicker">Academic profile</p>
-          <h2 id="about-title">About Me</h2>
-          <p>
-            I am a researcher working at the intersection of artificial
-            intelligence and electronic design automation. My research focuses
-            on <strong>AI for EDA</strong> and <strong>low-power optimization</strong>,
-            with an emphasis on design methodologies and energy-efficient
-            techniques for chip and hardware design.
-          </p>
-          <p>
-            I have published peer-reviewed work in leading conferences and
-            journals, including ICCAD, ASP-DAC, MLCAD, ACM TODAES, and IEICE
-            Electronics Express. Our work on agile LLM accelerator development
-            received the ICCAD 2024 Best Paper Award in the Front-End category.
-          </p>
+          <p class="section-kicker" data-i18n="about.kicker">Academic profile</p>
+          <h2 id="about-title" data-i18n="about.title">About Me</h2>
+          <p data-i18n="about.body1">I study AI for EDA and low-power optimization. My work covers design automation, processor architecture, and energy efficiency.</p>
+          <p data-i18n="about.body2">My work has appeared at ICCAD, ASP-DAC, and MLCAD, as well as in ACM TODAES and IEICE Electronics Express. Our agile LLM accelerator framework received the Front-End Best Paper Award at ICCAD 2024.</p>
         </section>
 
-        <section class="content-card details-card" id="education" aria-label="Education and honors">
+        <section class="content-card details-card" id="education" aria-label="Education and honors" data-i18n-aria-label="details.label">
           <div class="details-column">
-            <h2 class="compact-heading">Education &amp; Affiliation</h2>
+            <h2 class="compact-heading" data-i18n="education.title">Education &amp; Affiliation</h2>
             <div class="institution-list">
               <article class="institution">
                 <img
@@ -90,11 +100,12 @@
                   width="48"
                   height="48"
                   alt="Zhejiang University emblem"
+                  data-i18n-alt="education.zjuAlt"
                 >
                 <div>
-                  <h3>Zhejiang University</h3>
-                  <p>AI for EDA and efficient hardware systems</p>
-                  <p class="meta-line">Current affiliation · Hangzhou, China</p>
+                  <h3 data-i18n="education.zjuName">Zhejiang University</h3>
+                  <p data-i18n="education.zjuField">AI for EDA and efficient hardware systems</p>
+                  <p class="meta-line" data-i18n="education.zjuMeta">Current affiliation · Hangzhou, China</p>
                 </div>
               </article>
               <article class="institution">
@@ -104,25 +115,27 @@
                   width="48"
                   height="48"
                   alt="Hubei University of Technology emblem"
+                  data-i18n-alt="education.hbutAlt"
                 >
                 <div>
-                  <h3>Hubei University of Technology</h3>
-                  <p>Integrated Circuit Design and Integrated Systems</p>
-                  <p class="meta-line">Undergraduate study · Wuhan, China</p>
+                  <h3 data-i18n="education.hbutName">Hubei University of Technology</h3>
+                  <p data-i18n="education.hbutField">Integrated Circuit Design and Integrated Systems</p>
+                  <p class="meta-line" data-i18n="education.hbutMeta">Undergraduate study · Wuhan, China</p>
                 </div>
               </article>
             </div>
           </div>
           <div class="details-column" id="recognition">
-            <h2 class="compact-heading">Honors &amp; Awards</h2>
+            <h2 class="compact-heading" data-i18n="awards.title">Honors &amp; Awards</h2>
             <div class="award-item">
               <div>
-                <h3>William J. McCalla ICCAD Best Paper Award</h3>
-                <p>Front-End category, ACM/IEEE ICCAD</p>
+                <h3 data-i18n="awards.name">William J. McCalla ICCAD Best Paper Award</h3>
+                <p data-i18n="awards.category">Front-End category, ACM/IEEE ICCAD</p>
                 <a
                   href="https://confcats-event-sessions.s3.amazonaws.com/iccad24/uploads/ICCAD_2024_Program_Final.pdf"
                   target="_blank"
                   rel="noreferrer"
+                  data-i18n="awards.program"
                 >Official program</a>
               </div>
               <time datetime="2024">2024</time>
@@ -132,47 +145,47 @@
 
         <section class="content-card updates-card" id="updates" aria-labelledby="updates-title">
           <div class="card-heading-row">
-            <h2 class="compact-heading" id="updates-title">Updates</h2>
+            <h2 class="compact-heading" id="updates-title" data-i18n="updates.title">Updates</h2>
             <span class="heading-rule" aria-hidden="true"></span>
           </div>
           <div class="timeline">
             <div class="timeline-year">2026</div>
             <div class="timeline-items">
-              <p><time datetime="2026-05">May</time><span><cite>ZlibBoost</cite> appears in ACM TODAES.</span></p>
-              <p><time datetime="2026-01">Jan</time><span>Our RISC-V audio processor work appears in IEICE Electronics Express.</span></p>
+              <p><time datetime="2026-05" data-i18n="updates.may">May</time><span data-i18n="updates.2026May">ZlibBoost appears in ACM TODAES.</span></p>
+              <p><time datetime="2026-01" data-i18n="updates.jan">Jan</time><span data-i18n="updates.2026Jan">Our RISC-V audio processor work appears in IEICE Electronics Express.</span></p>
             </div>
             <div class="timeline-year">2025</div>
             <div class="timeline-items">
-              <p><time datetime="2025-01">Jan</time><span>Invited work on machine-learning-assisted cell characterization appears at ASP-DAC.</span></p>
+              <p><time datetime="2025-01" data-i18n="updates.jan">Jan</time><span data-i18n="updates.2025Jan">Invited work on machine-learning-assisted cell characterization appears at ASP-DAC.</span></p>
             </div>
             <div class="timeline-year">2024</div>
             <div class="timeline-items">
-              <p><time datetime="2024-10">Oct</time><span>Our agile LLM accelerator paper receives the ICCAD Best Paper Award.</span></p>
-              <p><time datetime="2024-09">Sep</time><span>Subcircuit identification work appears at MLCAD.</span></p>
+              <p><time datetime="2024-10" data-i18n="updates.oct">Oct</time><span data-i18n="updates.2024Oct">Our agile LLM accelerator paper receives the ICCAD Best Paper Award.</span></p>
+              <p><time datetime="2024-09" data-i18n="updates.sep">Sep</time><span data-i18n="updates.2024Sep">Subcircuit identification work appears at MLCAD.</span></p>
             </div>
           </div>
         </section>
 
         <section class="content-card research-card" id="research" aria-labelledby="research-title">
           <div class="card-heading-row">
-            <h2 class="compact-heading" id="research-title">Research</h2>
+            <h2 class="compact-heading" id="research-title" data-i18n="research.title">Research</h2>
             <span class="heading-rule" aria-hidden="true"></span>
           </div>
           <div class="research-grid">
             <article>
               <span class="research-index">01</span>
-              <h3>AI for EDA</h3>
-              <p>Machine learning for cell characterization.</p>
+              <h3 data-i18n="research.ai.title">AI for EDA</h3>
+              <p data-i18n="research.ai.summary">Machine learning for cell characterization.</p>
             </article>
             <article>
               <span class="research-index">02</span>
-              <h3>Low-power optimization</h3>
-              <p>Energy-aware methods that preserve the timing, quality, and reliability constraints of real systems.</p>
+              <h3 data-i18n="research.lowPower.title">Low-power optimization</h3>
+              <p data-i18n="research.lowPower.summary">Energy-aware optimization under timing, quality, and reliability constraints.</p>
             </article>
             <article>
               <span class="research-index">03</span>
-              <h3>Efficient hardware</h3>
-              <p>Agile accelerator and processor design for language models and real-time signal processing.</p>
+              <h3 data-i18n="research.hardware.title">Efficient hardware</h3>
+              <p data-i18n="research.hardware.summary">Processor architecture optimization and accelerator design.</p>
             </article>
           </div>
         </section>
@@ -180,18 +193,18 @@
         <section class="content-card publications-card" id="publications" aria-labelledby="publications-title">
           <div class="card-heading-row publications-heading">
             <div>
-              <p class="section-kicker">Reverse chronological</p>
-              <h2 class="compact-heading" id="publications-title">Publications</h2>
+              <p class="section-kicker" data-i18n="publications.kicker">Reverse chronological</p>
+              <h2 class="compact-heading" id="publications-title" data-i18n="publications.title">Publications</h2>
             </div>
             <p class="result-count" aria-live="polite">Showing 5 publications</p>
           </div>
 
           <div class="publication-toolbar">
-            <div class="filter-group" role="group" aria-label="Filter publications">
-              <button type="button" data-filter="all" aria-pressed="true">All</button>
-              <button type="button" data-filter="ai-eda" aria-pressed="false">AI for EDA</button>
-              <button type="button" data-filter="hardware" aria-pressed="false">Hardware</button>
-              <button type="button" data-filter="low-power" aria-pressed="false">Low power</button>
+            <div class="filter-group" role="group" aria-label="Filter publications" data-i18n-aria-label="publications.filterLabel">
+              <button type="button" data-filter="all" aria-pressed="true" data-i18n="publications.all">All</button>
+              <button type="button" data-filter="ai-eda" aria-pressed="false" data-i18n="publications.ai">AI for EDA</button>
+              <button type="button" data-filter="hardware" aria-pressed="false" data-i18n="publications.hardware">Hardware</button>
+              <button type="button" data-filter="low-power" aria-pressed="false" data-i18n="publications.lowPower">Low power</button>
             </div>
           </div>
 
@@ -205,6 +218,7 @@
                   loading="lazy"
                   decoding="async"
                   alt="ZlibBoost standard-cell characterization framework architecture"
+                  data-i18n-alt="publications.zlibboostAlt"
                 >
               </figure>
               <div class="publication-body">
@@ -225,6 +239,7 @@
                   loading="lazy"
                   decoding="async"
                   alt="Optimized RISC-V processor architecture for audio noise suppression"
+                  data-i18n-alt="publications.riscvAlt"
                 >
               </figure>
               <div class="publication-body">
@@ -245,10 +260,11 @@
                   loading="lazy"
                   decoding="async"
                   alt="Machine-learning-assisted standard-cell library characterization framework"
+                  data-i18n-alt="publications.aspdacAlt"
                 >
               </figure>
               <div class="publication-body">
-                <div class="publication-meta"><time datetime="2025">2025</time><span>ASP-DAC</span><span class="status-tag">Invited</span></div>
+                <div class="publication-meta"><time datetime="2025">2025</time><span>ASP-DAC</span><span class="status-tag" data-i18n="publications.invited">Invited</span></div>
                 <h3>Invited Paper: Boosting Standard Cell Library Characterization with Machine Learning</h3>
                 <p class="authors">Zhengrui Chen, Chengjun Guo, Zixuan Song, Guozhu Feng, <strong>Shizhang Wang</strong>, Li Zhang, Xunzhao Yin, Zhenhua Wu, Zheyu Yan, and Cheng Zhuo</p>
                 <p class="venue">30th Asia and South Pacific Design Automation Conference, pp. 385-391</p>
@@ -265,10 +281,11 @@
                   loading="lazy"
                   decoding="async"
                   alt="Agile LLM accelerator and system-on-chip design flow"
+                  data-i18n-alt="publications.iccadAlt"
                 >
               </figure>
               <div class="publication-body">
-                <div class="publication-meta"><time datetime="2024">2024</time><span>ICCAD</span><span class="status-tag award-tag">Best Paper</span></div>
+                <div class="publication-meta"><time datetime="2024">2024</time><span>ICCAD</span><span class="status-tag award-tag" data-i18n="publications.bestPaper">Best Paper</span></div>
                 <h3>An Agile Framework for Efficient LLM Accelerator Development and Model Inference</h3>
                 <p class="authors">Lvcheng Chen, Ying Wu, Chenyi Wen, <strong>Shizhang Wang</strong>, Li Zhang, Bei Yu, Qi Sun, and Cheng Zhuo</p>
                 <p class="venue">43rd IEEE/ACM International Conference on Computer-Aided Design, Article 200</p>
@@ -288,6 +305,7 @@
                   loading="lazy"
                   decoding="async"
                   alt="Fast subcircuit identification and subgraph matching framework"
+                  data-i18n-alt="publications.mlcadAlt"
                 >
               </figure>
               <div class="publication-body">
@@ -302,8 +320,8 @@
         </section>
 
         <footer class="site-footer">
-          <p>© 2026 Shizhang Wang</p>
-          <p>AI for EDA · Low-power optimization · Efficient hardware</p>
+          <p data-i18n="footer.copyright">© 2026 Shizhang Wang</p>
+          <p data-i18n="footer.focus">AI for EDA · Low-power optimization · Efficient hardware</p>
         </footer>
       </div>
     </main>

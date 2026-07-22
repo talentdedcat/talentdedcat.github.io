@@ -184,6 +184,65 @@
     }
   }
 
+  function countVisiblePublications(document) {
+    return [...document.querySelectorAll('[data-publication-id]')]
+      .filter((article) => !article.hidden).length;
+  }
+
+  function applyLanguage(document, language) {
+    const selected = normalizeLanguage(language);
+    document.documentElement.lang = selected === 'zh' ? 'zh-CN' : 'en';
+    document.documentElement.dataset.language = selected;
+    document.title = getTranslation(selected, 'document.title');
+
+    const description = document.querySelector('meta[name="description"]');
+    if (description) {
+      description.content = getTranslation(selected, 'document.description');
+    }
+
+    for (const element of document.querySelectorAll('[data-i18n]')) {
+      element.textContent = getTranslation(selected, element.dataset.i18n);
+    }
+    for (const element of document.querySelectorAll('[data-i18n-alt]')) {
+      element.alt = getTranslation(selected, element.dataset.i18nAlt);
+    }
+    for (const element of document.querySelectorAll('[data-i18n-aria-label]')) {
+      element.setAttribute(
+        'aria-label',
+        getTranslation(selected, element.dataset.i18nAriaLabel),
+      );
+    }
+    for (const button of document.querySelectorAll(
+      '.language-switch [data-language]',
+    )) {
+      button.setAttribute(
+        'aria-pressed',
+        String(button.dataset.language === selected),
+      );
+    }
+
+    const count = document.querySelector('.result-count');
+    if (count) {
+      count.textContent = formatPublicationCount(
+        countVisiblePublications(document),
+        selected,
+      );
+    }
+    return selected;
+  }
+
+  function setUpLanguage(document, storage) {
+    let selected = applyLanguage(document, getStoredLanguage(storage));
+    for (const button of document.querySelectorAll(
+      '.language-switch [data-language]',
+    )) {
+      button.addEventListener('click', () => {
+        selected = applyLanguage(document, button.dataset.language);
+        storeLanguage(storage, selected);
+      });
+    }
+  }
+
   function sortPublications(records) {
     if (!Array.isArray(records)) return [];
     return [...records].sort((left, right) => {
@@ -236,8 +295,10 @@
         );
       }
 
-      const total = visibleIds.size;
-      count.textContent = `Showing ${total} publication${total === 1 ? '' : 's'}`;
+      count.textContent = formatPublicationCount(
+        visibleIds.size,
+        document.documentElement.dataset.language,
+      );
     };
 
     for (const button of buttons) {
@@ -276,11 +337,20 @@
 
   function init() {
     const document = global.document;
-    const records = global.PUBLICATIONS;
-    if (!document || !hasValidPublicationData(records)) return;
+    if (!document) return;
+
+    let storage = null;
+    try {
+      storage = global.localStorage;
+    } catch {
+      // Language switching still works when storage access is blocked.
+    }
 
     document.documentElement.classList.add('js');
-    setUpFilters(document, records);
+    setUpLanguage(document, storage);
+    if (hasValidPublicationData(global.PUBLICATIONS)) {
+      setUpFilters(document, global.PUBLICATIONS);
+    }
     setUpActiveNavigation(document);
   }
 
