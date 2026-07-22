@@ -46,9 +46,8 @@ names and the verified award provide evidence without added superlatives.
 
 ### English Profile
 
-> I work on AI for EDA and low-power optimization. My research develops
-> practical methods for design automation, processor architecture, and energy
-> efficiency.
+> I study AI for EDA and low-power optimization. My work covers design
+> automation, processor architecture, and energy efficiency.
 >
 > My work has appeared at ICCAD, ASP-DAC, and MLCAD, as well as in ACM TODAES
 > and IEICE Electronics Express. Our agile LLM accelerator framework received
@@ -56,9 +55,9 @@ names and the verified award provide evidence without added superlatives.
 
 ### Chinese Profile
 
-> 我的研究方向为 AI for EDA 和低功耗优化，重点关注设计自动化、处理器架构及能效优化。
+> 我主要研究 AI for EDA 和低功耗优化，关注设计自动化、处理器架构、能效优化。
 >
-> 相关成果发表于 ICCAD、ASP-DAC、MLCAD、ACM TODAES 和 IEICE Electronics
+> 相关成果发表于 ICCAD、ASP-DAC、MLCAD、ACM TODAES、IEICE Electronics
 > Express。敏捷 LLM 加速器开发框架获 ICCAD 2024 Front-End Best Paper Award。
 
 ### Research Summaries
